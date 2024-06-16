@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Delivery Form</h2>
+  <form [formGroup]="deliveryForm" (ngSubmit)="createDelivery()">
+    <div class="form-group">
+      <label for="package_id">Package ID</label>
+      <select id="package_id" class="form-control" formControlName="package_id" (change)="onPackageSelected($event)">
+        <option *ngFor="let package of packages" [value]="package.package_id">
+          {{ package.description }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pickup_time">Pickup Time</label>
+      <input type="text" id="pickup_time" class="form-control" formControlName="pickup_time" />
+    </div>
+    <div class="form-group">
+      <label for="start_time">Start Time</label>
+      <input type="text" id="start_time" class="form-control" formControlName="start_time" />
+    </div>
+    <div class="form-group">
+      <label for="end_time">End Time</label>
+      <input type="text" id="end_time" class="form-control" formControlName="end_time" />
+    </div>
+    <div formGroupName="location" class="form-group">
+      <label for="lat">Latitude</label>
+      <input type="text" id="lat" class="form-control" formControlName="lat" placeholder="Latitude" />
+    </div>
+    <div formGroupName="location" class="form-group">
+      <label for="lng">Longitude</label>
+      <input type="text" id="lng" class="form-control" formControlName="lng" placeholder="Longitude" />
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" class="form-control" formControlName="status">
+        <option value="open">Open</option>
+        <option value="picked-up">Picked Up</option>
+        <option value="in-transit">In Transit</option>
+        <option value="delivered">Delivered</option>
+        <option value="failed">Failed</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

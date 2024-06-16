@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Package List</h2>
+          <ul class="list-group">
+            <li *ngFor="let package of packages" class="list-group-item">
+              <strong>ID:</strong> {{ package.package_id }} - <strong>Description:</strong> {{ package.description }} -
+              - <strong>From_address:</strong> {{ package.from_address }} - <strong>To_address:</strong> {{
+              package.to_address }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button class="nav-link" routerLink="/create-package">Create Package</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Delivery List</h2>
+          <ul class="list-group">
+            <li *ngFor="let delivery of deliveries" class="list-group-item">
+              <strong>ID:</strong> {{ delivery.delivery_id }} - <strong>PackageId:</strong> {{
+              delivery.package_id.package_id }} - <strong>Status:</strong> {{ delivery.status }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <button class="nav-link" routerLink="/create-delivery">Create Delivery</button>
+      </div>
+    </div>
+  </div>
+</div>

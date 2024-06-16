@@ -1,0 +1,99 @@
+<form [formGroup]="packageForm" (ngSubmit)="createPackage()">
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" id="description" class="form-control" formControlName="description">
+    <!-- <div *ngIf="packageForm.get('description').invalid && packageForm.get('description').touched" class="text-danger">
+      Description is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="weight">Weight (grams)</label>
+    <input type="number" id="weight" class="form-control" formControlName="weight">
+    <!-- <div *ngIf="packageForm.get('weight').invalid && packageForm.get('weight').touched" class="text-danger">
+      Weight is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="width">Width (cm)</label>
+    <input type="number" id="width" class="form-control" formControlName="width">
+    <!-- <div *ngIf="packageForm.get('width').invalid && packageForm.get('width').touched" class="text-danger">
+      Width is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="height">Height (cm)</label>
+    <input type="number" id="height" class="form-control" formControlName="height">
+    <!-- <div *ngIf="packageForm.get('height').invalid && packageForm.get('height').touched" class="text-danger">
+      Height is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="depth">Depth (cm)</label>
+    <input type="number" id="depth" class="form-control" formControlName="depth">
+    <!-- <div *ngIf="packageForm.get('depth').invalid && packageForm.get('depth').touched" class="text-danger">
+      Depth is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="from_name">From Name</label>
+    <input type="text" id="from_name" class="form-control" formControlName="from_name">
+    <!-- <div *ngIf="packageForm.get('from_name').invalid && packageForm.get('from_name').touched" class="text-danger">
+      From Name is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="from_address">From Address</label>
+    <input type="text" id="from_address" class="form-control" formControlName="from_address">
+    <!-- <div *ngIf="packageForm.get('from_address').invalid && packageForm.get('from_address').touched" class="text-danger">
+      From Address is required.
+    </div> -->
+  </div>
+
+  <div [formGroupName]="'from_location'">
+    <div class="form-group">
+      <label for="from_lat">From Location Latitude</label>
+      <input type="number" id="from_lat" class="form-control" formControlName="lat">
+    </div>
+
+    <div class="form-group">
+      <label for="from_lng">From Location Longitude</label>
+      <input type="number" id="from_lng" class="form-control" formControlName="lng">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="to_name">To Name</label>
+    <input type="text" id="to_name" class="form-control" formControlName="to_name">
+    <!-- <div *ngIf="packageForm.get('to_name').invalid && packageForm.get('to_name').touched" class="text-danger">
+      To Name is required.
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <label for="to_address">To Address</label>
+    <input type="text" id="to_address" class="form-control" formControlName="to_address">
+    <!-- <div *ngIf="packageForm.get('to_address').invalid && packageForm.get('to_address').touched" class="text-danger">
+      To Address is required.
+    </div> -->
+  </div>
+
+  <div [formGroupName]="'to_location'">
+    <div class="form-group">
+      <label for="to_lat">To Location Latitude</label>
+      <input type="number" id="to_lat" class="form-control" formControlName="lat">
+    </div>
+
+    <div class="form-group">
+      <label for="to_lng">To Location Longitude</label>
+      <input type="number" id="to_lng" class="form-control" formControlName="lng">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
